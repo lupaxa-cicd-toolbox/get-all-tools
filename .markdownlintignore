@@ -1,0 +1,4 @@
+# Generated / local-only — not part of the published site
+site/
+cursor-docs/
+.pytest_cache/

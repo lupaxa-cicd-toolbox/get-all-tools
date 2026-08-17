@@ -1,0 +1,18 @@
+# Private Superpowers specs/plans (symlink into Lupaxa cursor-docs vault)
+cursor-docs
+.makefiles/
+.superpowers/
+site/
+.venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
