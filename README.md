@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">get-all-tools</h1>
+<h1 align="center">Get All Tools</h1>
 
 ## Overview
 
@@ -48,7 +48,7 @@ cicd-shellcheck
 cicd-ruff
 ```
 
-## Source selection
+## Source Selection
 
 By default each pipeline is fetched from the `master` branch.
 
@@ -65,7 +65,7 @@ cicd-toolbox-sync --latest
 cicd-toolbox-sync --ref v0.1.0
 ```
 
-## Current toolset
+## Current Toolset
 
 | Name                                                                                      | Purpose                                                                                   |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
