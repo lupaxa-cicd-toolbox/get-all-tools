@@ -79,7 +79,7 @@ cicd-toolbox-sync --ref v0.1.0
 | [mypy](https://github.com/lupaxa-cicd-toolbox/mypy)                                       | Type-check Python with [mypy](https://mypy.readthedocs.io/).                              |
 | [perl-lint](https://github.com/lupaxa-cicd-toolbox/perl-lint)                             | Lint Perl with the native Perl checker.                                                   |
 | [php-lint](https://github.com/lupaxa-cicd-toolbox/php-lint)                               | Lint PHP with the native PHP checker.                                                     |
-| [psscriptanalyzer](https://github.com/lupaxa-cicd-toolbox/psscriptanalyzer)               | Lint PowerShell with [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer).  |
+| [powershell-linter](https://github.com/lupaxa-cicd-toolbox/powershell-linter)             | Lint PowerShell with [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer).  |
 | [puppet-lint](https://github.com/lupaxa-cicd-toolbox/puppet-lint)                         | Lint Puppet with [puppet-lint](https://rubygems.org/gems/puppet-lint).                    |
 | [pur](https://github.com/lupaxa-cicd-toolbox/pur)                                         | Check `requirements.txt` updates with [pur](https://pypi.org/project/pur/).               |
 | [pycodestyle](https://github.com/lupaxa-cicd-toolbox/pycodestyle)                         | Style-check Python with [pycodestyle](https://pypi.org/project/pycodestyle/).             |

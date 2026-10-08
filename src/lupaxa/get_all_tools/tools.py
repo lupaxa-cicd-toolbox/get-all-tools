@@ -23,7 +23,7 @@ TOOLS: list[str] = [
     "mypy",
     "perl-lint",
     "php-lint",
-    "psscriptanalyzer",
+    "powershell-linter",
     "puppet-lint",
     "pur",
     "pycodestyle",
