@@ -17,6 +17,7 @@ TOOLS: list[str] = [
     "awesomebot",
     "bandit",
     "hadolint",
+    "javascript-lint",
     "json-lint",
     "makefile-lint",
     "markdown-lint",
