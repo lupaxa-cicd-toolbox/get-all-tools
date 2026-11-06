@@ -14,6 +14,7 @@ def test_tools_includes_legacy_and_new() -> None:
         "makefile-lint",
         "ruff",
         "mypy",
+        "c-lint",
     ):
         assert name in TOOLS
 

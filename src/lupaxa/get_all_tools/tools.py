@@ -16,6 +16,7 @@ TOOLS: list[str] = [
     "action-lint",
     "awesomebot",
     "bandit",
+    "c-lint",
     "hadolint",
     "javascript-lint",
     "json-lint",
