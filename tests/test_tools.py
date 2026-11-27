@@ -28,14 +28,10 @@ def test_tools_are_unique_and_sorted_enough() -> None:
 def test_pipeline_url_defaults_to_master() -> None:
     """Default ref is master HEAD."""
     url = pipeline_url("shellcheck")
-    assert url == (
-        "https://raw.githubusercontent.com/lupaxa-cicd-toolbox/shellcheck/master/src/pipeline.sh"
-    )
+    assert url == "https://raw.githubusercontent.com/lupaxa-cicd-toolbox/shellcheck/master/src/pipeline.sh"
 
 
 def test_pipeline_url_accepts_release_tag() -> None:
     """A release tag can replace master in the raw URL."""
     url = pipeline_url("shellcheck", ref="v1.2.3")
-    assert url == (
-        "https://raw.githubusercontent.com/lupaxa-cicd-toolbox/shellcheck/v1.2.3/src/pipeline.sh"
-    )
+    assert url == "https://raw.githubusercontent.com/lupaxa-cicd-toolbox/shellcheck/v1.2.3/src/pipeline.sh"

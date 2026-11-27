@@ -22,9 +22,7 @@ def test_release_tag_from_api_payload() -> None:
     assert tag == "v0.2.0"
     get.assert_called_once()
     args, kwargs = get.call_args
-    assert args[0] == (
-        "https://api.github.com/repos/lupaxa-cicd-toolbox/shellcheck/releases/latest"
-    )
+    assert args[0] == "https://api.github.com/repos/lupaxa-cicd-toolbox/shellcheck/releases/latest"
     assert kwargs["timeout"] == 10
 
 
@@ -50,8 +48,5 @@ def test_non_404_http_errors_propagate() -> None:
     error.response = response
     response.raise_for_status.side_effect = error
 
-    with (
-        patch("lupaxa.get_all_tools.releases.requests.get", return_value=response),
-        pytest.raises(requests.HTTPError),
-    ):
+    with patch("lupaxa.get_all_tools.releases.requests.get", return_value=response), pytest.raises(requests.HTTPError):
         latest_release_tag("shellcheck")

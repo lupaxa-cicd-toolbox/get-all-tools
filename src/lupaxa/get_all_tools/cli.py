@@ -18,36 +18,14 @@ TIMEOUT = 10  # seconds
 
 def build_parser() -> argparse.ArgumentParser:
     """Build the command-line argument parser."""
-    parser = argparse.ArgumentParser(
-        prog="cicd-toolbox-sync",
-        description=(
-            "Download Lupaxa CICD Toolbox pipeline scripts (src/pipeline.sh) "
-            "into ~/bin/cicd-toolbox."
-        ),
-    )
+    parser = argparse.ArgumentParser(prog="cicd-toolbox-sync", description="Download Lupaxa CICD Toolbox pipeline scripts (src/pipeline.sh) into ~/bin/cicd-toolbox.")
     source = parser.add_mutually_exclusive_group()
-    source.add_argument(
-        "--latest",
-        action="store_true",
-        help=(
-            "Download from each tool's latest GitHub release tag "
-            "(falls back to master if a tool has no releases)."
-        ),
-    )
-    source.add_argument(
-        "--ref",
-        metavar="REF",
-        help="Download from an explicit git ref (branch or tag) for every tool.",
-    )
+    source.add_argument("--latest", action="store_true", help="Download from each tool's latest GitHub release tag (falls back to master if a tool has no releases).")
+    source.add_argument("--ref", metavar="REF", help="Download from an explicit git ref (branch or tag) for every tool.")
     return parser
 
 
-def resolve_download_ref(
-    tool_name: str,
-    *,
-    latest: bool,
-    ref: str | None,
-) -> str:
+def resolve_download_ref(tool_name: str, *, latest: bool, ref: str | None) -> str:
     """
     Choose the git ref used when downloading ``tool_name``.
 
@@ -58,10 +36,7 @@ def resolve_download_ref(
     if latest:
         tag = latest_release_tag(tool_name)
         if tag is None:
-            print(
-                f"No release found for {tool_name}; falling back to {DEFAULT_REF}",
-                file=sys.stderr,
-            )
+            print(f"No release found for {tool_name}; falling back to {DEFAULT_REF}", file=sys.stderr)
             return DEFAULT_REF
         return tag
     return DEFAULT_REF
@@ -105,11 +80,11 @@ def main(argv: list[str] | None = None) -> None:
         for tool in TOOLS:
             ref = resolve_download_ref(tool, latest=args.latest, ref=args.ref)
             download_tool(tool, ref=ref)
-    except OSError as exc:
-        print(f"An error occurred while setting up tools directory or downloading tools: {exc}")
-        sys.exit(1)
     except HTTPError as exc:
         print(f"Failed to resolve a release tag: {exc}")
+        sys.exit(1)
+    except OSError as exc:
+        print(f"An error occurred while setting up tools directory or downloading tools: {exc}")
         sys.exit(1)
 
 
