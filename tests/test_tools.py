@@ -7,15 +7,7 @@ from lupaxa.get_all_tools.tools import TOOLS, pipeline_url
 
 def test_tools_includes_legacy_and_new() -> None:
     """Catalogue covers the original set plus makefile-lint, ruff, and mypy."""
-    for name in (
-        "action-lint",
-        "shellcheck",
-        "yaml-lint",
-        "makefile-lint",
-        "ruff",
-        "mypy",
-        "c-lint",
-    ):
+    for name in ("action-lint", "shellcheck", "yaml-lint", "makefile-lint", "ruff", "mypy", "c-lint"):
         assert name in TOOLS
 
 

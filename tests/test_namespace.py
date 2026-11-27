@@ -9,7 +9,7 @@ _SRC = Path(__file__).resolve().parents[1] / "src"
 
 
 def test_lupaxa_portion_has_no_init() -> None:
-    """This checkout must not own the shared lupaxa namespace."""
+    """The checkout must not own the shared lupaxa namespace."""
     assert not (_SRC / "lupaxa" / "__init__.py").exists()
 
 
